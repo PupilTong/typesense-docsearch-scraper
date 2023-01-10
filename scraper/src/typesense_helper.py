@@ -30,21 +30,21 @@ class TypesenseHelper:
             self.typesense_client.collections[self.collection_name_tmp].delete()
         except exceptions.ObjectNotFound:
             pass
-
+        
         self.typesense_client.collections.create({
             'name': self.collection_name_tmp,
             'fields': [
                 {'name': 'anchor', 'type': 'string', 'optional': True},
-                {'name': 'content', 'type': 'string', 'optional': True},
+                {'name': 'content', 'type': 'string', 'locale':'zh', 'optional': True},
                 {'name': 'url', 'type': 'string', 'facet': True},
                 {'name': 'version', 'type': 'string[]', 'facet': True, 'optional': True},
-                {'name': 'hierarchy.lvl0', 'type': 'string', 'facet': True, 'optional': True},
-                {'name': 'hierarchy.lvl1', 'type': 'string', 'facet': True, 'optional': True},
-                {'name': 'hierarchy.lvl2', 'type': 'string', 'facet': True, 'optional': True},
-                {'name': 'hierarchy.lvl3', 'type': 'string', 'facet': True, 'optional': True},
-                {'name': 'hierarchy.lvl4', 'type': 'string', 'facet': True, 'optional': True},
-                {'name': 'hierarchy.lvl5', 'type': 'string', 'facet': True, 'optional': True},
-                {'name': 'hierarchy.lvl6', 'type': 'string', 'facet': True, 'optional': True},
+                {'name': 'hierarchy.lvl0', 'type': 'string', 'locale':'zh', 'facet': True, 'optional': True},
+                {'name': 'hierarchy.lvl1', 'type': 'string', 'locale':'zh', 'facet': True, 'optional': True},
+                {'name': 'hierarchy.lvl2', 'type': 'string', 'locale':'zh', 'facet': True, 'optional': True},
+                {'name': 'hierarchy.lvl3', 'type': 'string', 'locale':'zh', 'facet': True, 'optional': True},
+                {'name': 'hierarchy.lvl4', 'type': 'string', 'locale':'zh', 'facet': True, 'optional': True},
+                {'name': 'hierarchy.lvl5', 'type': 'string', 'locale':'zh', 'facet': True, 'optional': True},
+                {'name': 'hierarchy.lvl6', 'type': 'string', 'locale':'zh', 'facet': True, 'optional': True},
                 {'name': '.*_tag', 'type': 'string', 'facet': True, 'optional': True},
                 {'name': 'language', 'type': 'string', 'facet': True, 'optional': True},
                 {'name': 'tags', 'type': 'string[]', 'facet': True, 'optional': True},
